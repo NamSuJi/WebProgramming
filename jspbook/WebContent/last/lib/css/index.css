@@ -1,0 +1,43 @@
+.wrap{ margin:0 auto; width: 95%; height: 95%; }
+
+/* 상단 부분의 css */
+.divheader{ margin:0 auto; position: relative; width: 95%; height: 15%; }
+.headerLeft{ position:absolute; top:60%; left:0.000em; width:25%; height:50%; }
+.headerCenter{ position:absolute; top:0;left:25%; right:20%; width:60%; height:100%; }
+.headerRight{ position:absolute; top:60%; left:75%; right:0px; width:20%; height:50%; }
+
+.sort1{ width: 100%; height: 100%; text-align: center; }
+.sort2{ width: 90%; height: 80%; text-align: center; font-size:5.000em; font-weight:bolder; padding-top:25px; }
+.sort2, a{ font-family:sans-serif;color: black; text-decoration:none; }
+.sort2, a:visited{	color: black; text-decoration:none; }
+.sort3{ border:1px solid #fff; width: 100%; height: 50%; text-align: right; margin-top:0.500em; }
+
+.headerLeftTable{ width: 100%; height: 100%; text-align: center; }
+.headerLeftTable, tr{ width: 100%; height:100%; }
+.leftTh{ width:30%; height:100%; }
+
+.btncategory{ display:inline-block;width: 80%; height: 80%; text-align: center;	font-size: 1.7em; font-weight: bold; background-color: #fff;	border: 0.000em solid #fff;}
+.btncategory:hover{ border-bottom: 0.188em solid #0000FF; font-size:1.85em;}
+.btnlogin{ width: 30%; height: 100%; text-align: center; font-size: 1.438em; font-weight: bold; background-color: #fff; border: 1px solid #000; border-radius: 0.625em; }
+.btnlogin:hover{ color: #fff; background-color:#000; }
+.loginID{ font-size: 1.438em; } 
+.loginID:hover{ border-top:1px solid #0000FF; border-bottom:1px solid #0000FF; }
+
+/* 중간 부분 css */
+.divcenter{ width: 100%; height: 65%; background-color: #fff; border:0.063em solid #fff;}
+.centerin{ position:relative; width: 100%; height: 90%; margin-top:1%; background-color: #000; }
+.centerbox{ position:absolute; left:38%; top:40%; width: 30%; height: 17%; }
+.centerboxsort{ padding-top:2%; width: 100%; height: 80%; background-color: #0000FF; font-family:sans-serif; font-size: 3.500em; text-align: center; color: #fff;}
+
+.divfooter{ width: 100%; height: 50%; background-color: #fff; border:0.063em solid #fff;}
+.footerin{ width: 100%; height: 100%; background-color: #fff; border:0.063em solid #fff;}
+.content{ border:1px solid #fff;  width:100%; height: 100%; border-spacing:30px;}
+.contenttr{ border:1px solid #fff;  width:100%; height: 100%;}
+.contenttd{ border:1px solid #fff;  width:33%; height: 100%;}
+.contenttd:hover{background-color:#E0ECF8; cursor:pointer;}
+.contentwrap{ width: 100%; height: 100%; }
+.contentdiv1{ width: 99%; height: 23%; font-family:sans-serif; font-size: 4.375em;}
+.contentdiv2{ border-top:1px solid #000; width: 99%; height: 75%; font-size: 25px;}
+
+.footer{ width:100%; height:10%; background-color:#000; margin-top:3%;}
+.footer_box{ width:100%; height:10%; padding-top:1.5%; text-align:center; color:#fff; font-size:25px; }
