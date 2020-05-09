@@ -25,7 +25,7 @@
 					<input type='password' name='txtPwd' class='logininput' placeholder='Enter Password'/>
 				</div>
 				<div class='loginbox'>
-					<input type='button' class='loginbutton' value='Join' onclick='goJoinCheck();' />
+					<input type='button' class='loginbutton' value='회원가입' onclick='goJoinCheck();' />
 				</div>
 			</div>
 		</div>

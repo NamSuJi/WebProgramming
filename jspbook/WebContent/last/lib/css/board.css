@@ -1,4 +1,4 @@
-.wrap1{ width:95%; height:90%; padding-top: 3%; padding-left: 3.5%;}
+.wrap1{ width:95%; height:90%; padding-top: 3%; padding-left: 3.5%;} 
 /*list.jsp에서 적용되는 스타일*/
 .ListTable{	width: 90%;	text-align: center;	margin: auto;	border-collapse: collapse; }
 .ListTd1{ width: 50%; font-size: 18px; padding: 10px; border-top: 1px solid #333; border-bottom: 1px solid #333; }

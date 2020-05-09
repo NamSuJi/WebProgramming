@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <%@ include file="lib/header.jsp" %>
 
 <div class='wrap1'>
@@ -21,7 +20,7 @@ if(!num.equals("")){
 		if(rs.next()){
 			subject = rs.getString("subject");
 			content = rs.getString("content");
-			content = content.replace("<br />","\r\n");
+			content = content.replace("<br />","\r\n").replace("/", "<");
 	%>
 	<table class="writeTable">
 		<tr class="writeSubject">

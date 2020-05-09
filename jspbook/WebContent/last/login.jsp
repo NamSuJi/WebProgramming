@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <html>
 <head>
 <title>Code</title>
@@ -21,11 +22,11 @@
 					<input type='text' name='pwd' class='logininput' placeholder='PASSWORD' />
 				</div>
 				<div class='loginbox'>
-					<input type='button' class='loginbutton' value='Login' onclick='goLoginCheck();' />
+					<input type='button' class='loginbutton' value='로그인' onclick='goLoginCheck();' />
 				</div>
 				<div class='loginbox'>
 					<div class='joinbox'>
-					<input type='button' class='joininput' value='Join' onclick="javascript:location.href='join.jsp'" />
+					<input type='button' class='joininput' value='회원가입' onclick="javascript:location.href='join.jsp'" />
 					</div>
 				</div>
 			</div>

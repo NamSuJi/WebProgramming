@@ -1,5 +1,5 @@
 function goView(num){
-	f.num.value = num;
+	f.num.value = num; 
 	f.target = '_self';
 	f.action = 'view.jsp';
 	f.submit();

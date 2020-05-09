@@ -1,9 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="lib/DBConnection.jsp" %>
 <%@ page import="java.time.LocalDate" %>
 <%@ page import="java.time.format.DateTimeFormatter" %>
 <%@ page import="java.time.LocalDateTime" %>
 <%@ page import="java.sql.*" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 request.setCharacterEncoding("UTF-8");
 String strSQL = "";
@@ -16,7 +16,7 @@ String category = request.getParameter("inData");
 String num = request.getParameter("num");
 String subject = request.getParameter("txtSubject");
 String content = request.getParameter("txtContent");
-content = content.replace("\r\n","<br />");
+content = content.replace("\r\n","<br />").replace("<", "/");
 int views = 0;
 String viewURL="";
 String listURL="";
