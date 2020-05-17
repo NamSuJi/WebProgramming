@@ -9,7 +9,7 @@
 	int countPage = 5; // 한 페이지에 보이는 페이징 블럭 범위
 	int totalPage = totalCount/countList;//나타나는 총 페이지 수
 	int startPage = 0;
-	int endPage = 0;
+	int endPage = 0; 
 	int startRow = 0;
 	
 	//현재 페이지 번호가 바뀌면 currentPage에 적용시켜줌
