@@ -1,7 +1,9 @@
 body {
 	font-family: "Lato", sans-serif;
+	min-width: 640px;
+	min-hieght: 960px;
 }
-.headerDiv{ width:100%; height:15%; margin-bottom:20px; margin-top:15px;}
+.headerDiv{ width:100%; height:15%; margin-bottom:20px; margin-top:15px; }
 .sidenav {
 	height: 100%;
 	width: 0;

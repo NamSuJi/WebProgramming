@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="DBConnection.jsp" %>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>Money</title>
     <link rel="stylesheet" type="text/css" href="lib/css/header.css?v=<%=System.currentTimeMillis() %>">
+  	<link rel="stylesheet" type="text/css" href="lib/css/total.css?v=<%=System.currentTimeMillis() %>">
   	<script type="text/javascript" src=".js/jquery-3.1.0.min.js"></script>
   	<script type="text/javascript" src="lib/js/header.js?v=<%=System.currentTimeMillis() %>"></script>
   	

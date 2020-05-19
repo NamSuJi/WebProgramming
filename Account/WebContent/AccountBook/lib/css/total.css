@@ -1,0 +1,9 @@
+@charset "EUC-KR";
+.accountDiv{ margin-top:40px; }
+.title{ height: 50px; text-align:left; font-size:40px; font-weight:bold; padding-bottom:20px;}
+.accountTable{ border:1px solid #000; width:70%; height:50%; text-align:center; }
+.accountTable .date{ text-align:left; }
+.accountTable .button{ text-align:right; }
+.accountTable .th1{border:1px solid #000; width: 25%; height:5%;  }
+.accountTable .th2{border:1px solid #000; width: 50%; height:5%; }
+.accountTable .th3{border:1px solid #000; width: 20%; height:5%; }
