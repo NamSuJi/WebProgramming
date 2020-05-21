@@ -3,5 +3,9 @@
 	session.removeAttribute("userID");
 	
 	session.invalidate();
-	response.sendRedirect("index.jsp"); 
+	response.sendRedirect("../index.jsp"); 
 %>
+
+<script>
+	alert('로그아웃 되셨습니다.');
+</script>

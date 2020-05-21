@@ -5,7 +5,7 @@ function goView(num){
 	f.submit();
 }
 function goWrite(category, num){
-	if(num==null) f.num.value=="";
+	if(num==null) f.num.value="";
 	else f.num.value = num;
 	f.inData.value = category;
 	f.target = "_self";

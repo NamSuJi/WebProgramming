@@ -1,9 +1,26 @@
-@charset "EUC-KR";
+@charset "UTF-8";
+/*전체*/
 .accountDiv{ margin-top:40px; }
-.title{ height: 50px; text-align:left; font-size:40px; font-weight:bold; padding-bottom:20px;}
-.accountTable{ border:1px solid #000; width:70%; height:50%; text-align:center; }
+.title{ height: 50px; text-align:left; font-size:40px; font-weight:bold; padding-bottom:30px;}
+.subtitle{ height: 40px; text-align:left; font-size:30px; font-weight:bold; padding-bottom:30px;}
+.doLeft{text-align:left;}
+.doRight{text-align:right;}
+.accountButton{ width:40px; height:25px; border:1px solid #000; background:#fff; border-radius:10px;}
+.accountButton:hover{ background:#000; color:#fff;}
+
+/*account*/
+.accountTable{  border-collapse:separate; border-spacing:0 14px; width:70%; height:50%; text-align:center; }
+.accountTable .trInterval{margin:5px;}
 .accountTable .date{ text-align:left; }
 .accountTable .button{ text-align:right; }
-.accountTable .th1{border:1px solid #000; width: 25%; height:5%;  }
-.accountTable .th2{border:1px solid #000; width: 50%; height:5%; }
-.accountTable .th3{border:1px solid #000; width: 20%; height:5%; }
+.accountTable .th1{border-bottom:1px solid #000; width: 20%; height:5%; }
+.accountTable .th2{border-bottom:1px solid #000; width: 25%; height:5%;  }
+.accountTable .th3{border-bottom:1px solid #000; width: 30%; height:5%; }
+.accountTable .th4{border-bottom:1px solid #000; width: 20%; height:5%; }
+.accountTable .trHover:hover{background-color:#E0ECF8;}
+
+/*accountList*/
+.accountSelect{width:150px;}
+.accountText{ width:300px;}
+.accountTextArea{ width:300px;height:100px;}
+.QnATable{ border:1px solid #000; border-collapse:separate; border-spacing:0 14px; width:800px; height:500px; text-align:center; }

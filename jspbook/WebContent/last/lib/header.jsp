@@ -10,7 +10,7 @@
 <script src="lib/js/local.js?v=<%=System.currentTimeMillis() %>"></script>
 <script src="lib/js/user.js?v=<%=System.currentTimeMillis() %>"></script>
 </head>
-<body>
+<body style="min-width:900px;">
 <%
 		String userID = "guest";
 		if(session.getAttribute("userID") != null){

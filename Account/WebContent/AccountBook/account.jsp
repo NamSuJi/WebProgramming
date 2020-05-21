@@ -4,57 +4,57 @@
 <%@ page import="java.util.Date" %>
 <%@ include file="lib/header.jsp" %>
 <%
+	request.setCharacterEncoding("UTF-8");
+
 	Calendar cal1= Calendar.getInstance();
 	Calendar cal2= Calendar.getInstance();
-	cal1.setTime(new Date());
-	cal2.setTime(new Date());
+	cal1.setTime(new Date());//지난 달
+	cal2.setTime(new Date());//현재 달
 	DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-	cal2.add(Calendar.MONTH, -1);
+	cal1.add(Calendar.MONTH, -1);
+
+	String date1=request.getParameter("inDate1");
+	String date2=request.getParameter("inDate2");
+	if(date1==null||date1.length()==0) date1 = df.format(cal1.getTime());
+	if(date2==null||date2.length()==0) date2 = df.format(cal2.getTime());
+	
+	if(!userID.equals("guest")){
 %>
 <div align="center" class="accountDiv">
    	<table class="accountTable">
    		<tr class="title"><td colspan="3"> 가계부 </td></tr>
    		<tr>
-   			<td colspan="2" class="date">
-   				<input type="date" name="date1"/>
+   			<td colspan="4" class="date">
+   				<input type="date" name="date1" value="<%=date1%>"/>
    				~
-   				<input type="date" name="date2"/>
-   				<input type="button" value="조회" onclick=""/>
+   				<input type="date" name="date2" value="<%=date2%>"/>
+   				<input type="button" class="accountButton" value="조회" onclick="javascript:reaccount();"/>
+   				<input type="button" class="accountButton" value="추가" onclick="javascript:goAccountList('');"/>
    			</td>
-   			<td class="button"><input type="button" value="+" onclick=""/></td>
    		</tr>
    		<tr>
-   			<th class="th1"> Category </th>
-   			<th class="th2"> Content </th>
-   			<th class="th3"> Date </th> 
+   			<th class="th1"> Money </th>
+   			<th class="th2"> Category </th>
+   			<th class="th3"> Content </th>
+   			<th class="th4"> Date </th> 
 		</tr>
-		<% 
-		request.setCharacterEncoding("UTF-8");
-		String userID=request.getParameter("userID");
-		String date1=request.getParameter("date1");
-		String date2=request.getParameter("date2");
-		if(userID.equals("")){
-			out.print("<script>alert('로그인 해주세요')</script>");
-			out.print("<script>location.href('index.jsp')</script>");
-		}
-		else{
-			if(date1.equals("")) date1 = df.format(cal1.getTime());
-			if(date2.equals("")) date2 = df.format(cal2.getTime());
-			
-			/*String strSQL = "Select category,content,date From jspdb.tb_user where id='"+userID+" ";
-			strSQL+="between '"+date1+"' and '"+date2+"' order by decs";
-			
-			Connection conn = new DBConnection().getConnection();
-			Statement stmt = null;
-			ResultSet rs = null;
-			if(conn!=null){
-				stmt = conn.createStatement();
-				rs = stmt.executeQuery(strSQL);
-				if(rs.next()){ 
+	<%
+		String strSQL = "Select num,money,category,subject,date From jspdb.account where id='"+userID+"' ";
+		strSQL+="and date between '"+date1+"' and '"+date2+"' order by date desc,num desc";
+		//out.print(strSQL);
+		
+		Connection conn = new DBConnection().getConnection();
+		Statement stmt = null;
+		ResultSet rs = null;
+		if(conn!=null){
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(strSQL);
+			while(rs.next()){ 
 		%>
-		<tr>
+		<tr class="trHover" onclick="javascript:goAccountList('<%=rs.getString("num")%>')">
+			<td><%=rs.getString("money") %></td>
 			<td><%=rs.getString("category") %></td>
-			<td><%=rs.getString("content") %></td>
+			<td><%=rs.getString("subject") %></td>
 			<td><%=rs.getString("date") %></td>
 		</tr>
 		<%
@@ -62,8 +62,14 @@
 			}
 			if(rs!=null) rs.close();
 			if(stmt!=null) stmt.close();
-			if(conn!=null) conn.close();*/
+			if(conn!=null) conn.close();
 		}
+		
+		else{
+			out.print("<script>alert('로그인 해주세요');</script>");
+			//out.print("<script>location.href='index.jsp';</script>");
+			out.print("<script>location.replace('index.jsp');</script>");
+		}	
 		%>
    	</table>
 </div>
