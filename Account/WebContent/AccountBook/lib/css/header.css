@@ -65,4 +65,5 @@ body {
 .middle .tagp{padding-top:120px;font-size:60px; font-weight:bolder; font-style:oblique;color:#fff;}
 
 .footer{ font-size:15px; }
-.footerDiv{ position:absolute; width:20%;top:90%; left:40%;}
+.footerDiv{ position:absolute; width:98%; bottom:5%;}
+.footerDivStatistic{ position:absolute; width:20%; bottom:0%; left:40%;}

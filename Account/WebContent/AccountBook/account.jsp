@@ -1,7 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.text.*" %>
-<%@ page import="java.util.*" %>
-<%@ page import="java.util.Date" %>
 <%@ include file="lib/header.jsp" %>
 <%
 	request.setCharacterEncoding("UTF-8");
@@ -36,12 +33,18 @@
    			<th class="th1"> Money </th>
    			<th class="th2"> Category </th>
    			<th class="th3"> Content </th>
-   			<th class="th4"> Date </th> 
+   			<th class="th4"> Price </th>
+   			<th class="th5"> Date </th> 
 		</tr>
 	<%
-		String strSQL = "Select num,money,category,subject,date From jspdb.account where id='"+userID+"' ";
+		String strSQL = "Select num,money,category,subject,date,price From jspdb.account where id='"+userID+"' ";
 		strSQL+="and date between '"+date1+"' and '"+date2+"' order by date desc,num desc";
 		//out.print(strSQL);
+		String money = "";
+		String moneytr = "";
+		String moneytd = "";
+		String toprice = "";
+		int price = 0;
 		
 		Connection conn = new DBConnection().getConnection();
 		Statement stmt = null;
@@ -50,11 +53,19 @@
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(strSQL);
 			while(rs.next()){ 
+				money = rs.getString("money");
+				toprice = rs.getString("price");
+				price = Integer.parseInt(toprice);
 		%>
-		<tr class="trHover" onclick="javascript:goAccountList('<%=rs.getString("num")%>')">
-			<td><%=rs.getString("money") %></td>
+		<% 
+			if(money.equals("입금")){ moneytr="inTr"; moneytd="inTd"; }
+			else if(money.equals("지출")){ moneytr="outTr"; moneytd="outTd"; }
+		%>
+		<tr class="<%=moneytr%>" onclick="javascript:goAccountList('<%=rs.getString("num")%>')">
+			<td class="<%=moneytd%>"><%=rs.getString("money") %></td>
 			<td><%=rs.getString("category") %></td>
 			<td><%=rs.getString("subject") %></td>
+			<td><%=formatter.format(price) %></td>
 			<td><%=rs.getString("date") %></td>
 		</tr>
 		<%

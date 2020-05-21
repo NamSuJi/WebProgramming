@@ -1,4 +1,3 @@
-.wrap1{ width:95%; height:90%; padding-top: 3%; padding-left: 3.5%;} 
 /*list.jsp에서 적용되는 스타일*/
 .ListTable{	width: 90%;	text-align: center;	margin: auto;	border-collapse: collapse; }
 .ListTd1{ width: 50%; font-size: 18px; padding: 10px; border-top: 1px solid #333; border-bottom: 1px solid #333; }
@@ -14,7 +13,7 @@
 .PagingButton{ padding: 0 .3em; transition: all .3s; background: #000000; color: #FFFFFF; }
 .PagingButton:hover{ background: #000000; color: #FFFFFF; }
 .ListPagingButton { padding: 0 .3em; transition: all .3s; }
-.ListPagingButton:hover { color: #FFFFFF; background-color: #000000; }
+.ListPagingButton:hover { color: #FFFFFF; background-color: #000000; cursor:pointer; }
 
 /* list.jsp의 기본 버튼*/
 .buttondiv{ padding-left:94%; }
@@ -23,7 +22,7 @@
 .button1:hover{ background: #000; color: #fff; }
 
 /* view.jsp에서 table,tr,td에 쓰이는 스타일 */
-.viewTable{ width: 90%; height: 100%; border-top: 1px solid #5882FA; margin: auto; }
+.viewTable{ width: 90%; height: 50%; border-top: 1px solid #5882FA; margin: auto; }
 .viewTr{ text-align: center; height:7%; }
 .viewTrButton{ height:10%; text-align: right; }
 .viewTh1{ width:55%; color: #000000; border-bottom: 1px solid #000000; text-align: left; font-size: 20px;  }
@@ -34,10 +33,10 @@
 
 /* list.jsp와 write.jsp의 이동 버튼 디자인 */
 .goButton{ background: #FFFFFF; border: 1px solid #fff; border-radius: 5px; color: #000000; font-size: 15px; font-weight: normal; padding: 2px 6px; text-transform: uppercase; }
-.goButton:hover{ font-size:16px; font-weight: bolder; background:#000000; color:#ffffff; }
+.goButton:hover{ font-size:16px; font-weight: bolder; background:#000000; color:#ffffff; cursor:pointer;}
 
 /* write.jsp에서 쓰이는 table 디자인 */
-.writeTable{ width: 90%; height: 100%; border-top: 1px solid #333; border-collapse: collapse; border-radius: 5px; margin: auto; margin-bottom: 20px; text-align: center; padding: 5px; }
+.writeTable{ width: 90%; height: 300px; border-top: 1px solid #333; border-collapse: collapse; border-radius: 5px; margin: auto; margin-bottom: 20px; text-align: center; padding: 5px; }
 .writeSubject{ height:7%; }
 .writeSubject1{ width: 10%; padding: 3px; }
 .writeSubject2{ width: 80%; padding: 3px; }

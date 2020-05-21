@@ -8,19 +8,20 @@ String num = request.getParameter("inData");
 String money = request.getParameter("txtmoney");
 String category = request.getParameter("txtcategory");
 String subject = request.getParameter("txtsubject");
+String price = request.getParameter("txtprice");
 String memo = request.getParameter("txtmemo");
 memo = memo.replace("\r\n","<br />").replace("<", "/");
 String date = request.getParameter("txtdate");
 String url = "";
 
 if(num.equals("")){
-	strSQL = "insert into jspdb.account(money,category,id,subject,memo,date) ";
-	strSQL += "values('"+money+"','"+category+"','"+userID+"','"+subject+"','"+memo+"','"+date+"');";
+	strSQL = "insert into jspdb.account(money,category,id,subject,price,memo,date) ";
+	strSQL += "values('"+money+"','"+category+"','"+userID+"','"+subject+"','"+price+"','"+memo+"','"+date+"');";
 	
 	url ="account.jsp";
 }
 else{
-	strSQL = "Update jspdb.account SET money='"+money+"',category='"+category+"',subject='"+subject+"', memo='"+memo+"', date='"+date+"' where num = "+num+";";
+	strSQL = "Update jspdb.account SET money='"+money+"',category='"+category+"',subject='"+subject+"',price='"+price+"', memo='"+memo+"', date='"+date+"' where num = "+num+";";
 	
 	url = "accountList.jsp?inData="+num;
 }

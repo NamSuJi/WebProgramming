@@ -5,7 +5,7 @@
 <table class="accountTable">
 <tr class="title"><td>QnA</td></tr>
 <%
-	String strSQL = "Select num,userID,subject,regdate FROM jspdb.tb_board where category='account'";
+	String strSQL = "Select num,id,subject,content,date FROM jspdb.account_qna ";
 	strSQL += "order by num desc;";
 	//out.print(strSQL);
 	
@@ -18,14 +18,14 @@
 		
 		while(rs.next()){
 			int num = rs.getInt("num");
-			String id = rs.getString("userID");
+			String id = rs.getString("id");
 			String subject = rs.getString("subject");
-			String regdate = rs.getString("regdate");
+			String date = rs.getString("date");
 %>
 		<tr class="trhover" onclick="javascript:goView('<%=num%>')">
 			<td class="ListTd1">&nbsp;<%=subject%></td>
 			<td class="ListTd2"><%=id%></td>
-			<td class="ListTd2"><%=regdate%></td>
+			<td class="ListTd2"><%=date%></td>
 		</tr>
 <%		
 		}

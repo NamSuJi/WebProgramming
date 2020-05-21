@@ -11,9 +11,8 @@ if(!num.equals("")){
 	String password = "";
 	String content = "";
 	String regdate = "";
-	int views = 0;
 	
-	String strSQL = "Select subject, content, userID, regdate, views from jspdb.tb_board where num = '"+num+"';";
+	String strSQL = "Select subject, content, id, date from jspdb.account_qna where num = '"+num+"';";
 	Connection conn = new DBConnection().getConnection();
 	Statement stmt = null;
 	ResultSet rs = null;
@@ -22,11 +21,10 @@ if(!num.equals("")){
 		rs = stmt.executeQuery(strSQL);
 		
 		if(rs.next()){
-			name = rs.getString("userID");
+			name = rs.getString("id");
 			subject = rs.getString("subject");
 			content = rs.getString("content").replace("<br />","\r\n"); 
-			regdate = rs.getString("regdate");
-			views = rs.getInt("views");
+			regdate = rs.getString("date");
 		}
 	}
 	%>
@@ -35,7 +33,6 @@ if(!num.equals("")){
 		<th class="viewTh1"><span><%=subject%></span></th>
 		<th class="viewTh2"><%=name%></th>
 		<th class="viewTh3"><%=regdate%></th>
-		<th class="viewTh4"><%=++views%></th>
 	</tr>
 	<tr valign="top">
 		<td colspan="4" class="viewContentTd"><xmp><%=content%></xmp></td>

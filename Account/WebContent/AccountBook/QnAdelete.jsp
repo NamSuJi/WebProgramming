@@ -5,7 +5,7 @@
 request.setCharacterEncoding("UTF-8");
 String num = request.getParameter("inData");
 String url = "QnA.jsp";
-String strSQL = "Delete from jspdb.tb_board where num = "+num+";";
+String strSQL = "Delete from jspdb.account_qna where num = "+num+";";
 
 Connection conn = new DBConnection().getConnection();
 Statement stmt = null;

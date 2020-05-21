@@ -10,7 +10,7 @@ String strSQL = "";
 /* 날짜 형식을 YY-mm-dd로 받기 위해 선언 및 사용 */
 LocalDateTime current = LocalDateTime.now();
 DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE;
-String regdate = current.format(formatter);
+String date = current.format(formatter);
 String userID = request.getParameter("userID");
 String num = request.getParameter("inData");
 String subject = request.getParameter("txtSubject");
@@ -19,13 +19,13 @@ content = content.replace("\r\n","<br />").replace("<", "/");
 String url="";
 
 if(num.equals("")){
-	strSQL = "insert into jspdb.tb_board(category,userID,subject,regdate,content) ";
-	strSQL += "values('account','"+userID+"','"+subject+"','"+regdate+"','"+content+"');";
+	strSQL = "insert into jspdb.account_qna(id,subject,date,content) ";
+	strSQL += "values('"+userID+"','"+subject+"','"+date+"','"+content+"');";
 	
 	url ="QnA.jsp";
 }
 else{
-	strSQL = "Update jspdb.tb_board SET subject='"+subject+"', content='"+content+"' where num = "+num+";";
+	strSQL = "Update jspdb.account_qna SET subject='"+subject+"', content='"+content+"' where num = "+num+";";
 	
 	url = "QnAview.jsp?inData="+num;
 }

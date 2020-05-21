@@ -58,3 +58,11 @@ function categoryChange(e){
 	  target.appendChild(opt);
 	} 
 }
+function restatistics(){
+	f.inDate1.value = f.date1.value;//지난 달
+	f.inDate2.value = f.date2.value;//현재 달
+	//alert(f.date1.value+"/"+f.date2.value);
+	f.target = "_self";
+	f.action = "statistics.jsp";
+	f.submit();
+}

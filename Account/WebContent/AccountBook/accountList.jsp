@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="lib/header.jsp" %>
 <%
 	request.setCharacterEncoding("UTF-8");
@@ -7,11 +7,13 @@
 	String money = "";
 	String category = "";
 	String subject = "";
+	String toprice = "";
+	int price = 0;
 	String memo = "";
 	String date = "";
 
 	if(num!=null){		
-		String strSQL = "Select money,category,subject,memo,date from jspdb.account where num='"+num+"';";
+		String strSQL = "Select money,category,subject,price,memo,date from jspdb.account where num='"+num+"';";
 		Connection conn = new DBConnection().getConnection();
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -23,6 +25,8 @@
 				money = rs.getString("money");
 				category = rs.getString("category");
 				subject = rs.getString("subject");
+				toprice = rs.getString("price");
+				price = Integer.parseInt(toprice);
 				memo = rs.getString("memo");
 				memo = memo.replace("<br />","\r\n");
 				date = rs.getString("date");
@@ -52,8 +56,8 @@
    				<option value="지출" <%if(money.equals("지출")){%>selected<%} %>>지출</option>
    			</select>
    			<select class="accountSelect" id="txtcategory" name="txtcategory">
-   				<%if(category!=null){ %><option><%=category %></option><%} 
-   				else{%><option>선택해주세요</option><%} %>
+   				<%if(category.equals("")){ %><option>선택해주세요</option><%} 
+   				else{%><option><%=category %></option><%} %>
    			</select>
    			</td>
    		<tr>
@@ -65,6 +69,12 @@
 		<tr>
 			<td>날짜</td>
 			<td class="doLeft"><input type="date" name="txtdate" value="<%=date%>"/></td>
+		</tr>
+   		<tr>
+   			<td>가격</td>
+   			<td class="doLeft">
+   				<input type="text" class="accountText"name="txtprice" placeholder='가격' value="<%=formatter.format(price)%>"/>
+   			</td>
 		</tr>
 		<tr>
 			<td>상세내용</td>

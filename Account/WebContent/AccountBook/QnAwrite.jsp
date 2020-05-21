@@ -9,7 +9,7 @@ String num = request.getParameter("inData");
 if(!num.equals("")){
 	String subject;
 	String content;
-	String strSQL = "Select subject, content from jspdb.tb_board where num = "+num+";";
+	String strSQL = "Select subject, content from jspdb.account_qna where num = "+num+";";
 	Connection conn = new DBConnection().getConnection();
 	Statement stmt = null;
 	ResultSet rs = null;
