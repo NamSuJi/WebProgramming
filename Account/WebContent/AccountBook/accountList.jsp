@@ -42,7 +42,7 @@
    		<tr class="subtitle"><td colspan="3"> 내역 추가 </td></tr>
    		<tr class="doLeft">
    			<td colspan="2">
-				<input type="button" class="accountButton" value="목록" onclick="goAccount();"/>
+				<input type="button" class="accountButton" value="목록" onclick="goAccount()"/>
 	   			<input type="button" class="accountButton" value="추가" onclick="goAccountSave('<%=num%>')"/>
 				<input type="button" class="accountButton" value="삭제" onclick="goAccountDelete('<%=num%>')"/>
 			</td>

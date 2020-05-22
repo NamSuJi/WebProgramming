@@ -15,7 +15,7 @@
 					<input type='text' name='pwd' class='logininput' placeholder='PASSWORD' />
 				</div>
 				<div class='loginbox'>
-					<input type='button' class='loginbutton' value='로그인' onclick='goLoginCheck();' />
+					<input type='button' class='loginbutton' value='로그인' onclick='goLoginCheck();' onkeypress="if(event.keyCode == 13){ goLoginCheck(); return; }" />
 				</div>
 				<div class='loginbox'>
 					<div class='joinbox'>

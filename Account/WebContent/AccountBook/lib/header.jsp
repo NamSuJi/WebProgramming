@@ -1,8 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" pageEncoding="UTF-8" %>
 <%@ page import="java.text.*" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.util.Date" %>
-<%@ include file="Board.jsp" %>
+<%@ include file="DBConnection.jsp"%>
 <% DecimalFormat formatter = new DecimalFormat("###,###"); %>
 <!DOCTYPE html>
 <html>
