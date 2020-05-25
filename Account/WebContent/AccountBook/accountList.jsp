@@ -8,7 +8,7 @@
 	String category = "";
 	String subject = "";
 	String toprice = "";
-	int price = 0;
+	//int price = 0;
 	String memo = "";
 	String date = "";
 
@@ -26,7 +26,7 @@
 				category = rs.getString("category");
 				subject = rs.getString("subject");
 				toprice = rs.getString("price");
-				price = Integer.parseInt(toprice);
+				//price = Integer.parseInt(toprice);
 				memo = rs.getString("memo");
 				memo = memo.replace("<br />","\r\n");
 				date = rs.getString("date");
@@ -73,7 +73,7 @@
    		<tr>
    			<td>가격</td>
    			<td class="doLeft">
-   				<input type="text" class="accountText"name="txtprice" placeholder='가격' value="<%=formatter.format(price)%>"/>
+   				<input type="text" class="accountText"name="txtprice" placeholder='가격' value="<%=toprice%>"/>
    			</td>
 		</tr>
 		<tr>
